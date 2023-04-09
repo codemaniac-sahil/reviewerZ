@@ -1,7 +1,7 @@
 
 # Reviewerz
 
-Reviewerz is a book reviewing website built using the MERN stack, Firebase, Cloudinary, and Multer. It allows users to browse through a catalog of books, read reviews, and write their own reviews for books they've read.
+Reviewerz is a book reviewing website that allows users to browse through a catalog of books, read reviews, and write their own reviews for books they've read. The website is built using the MERN stack and utilizes Firebase Authentication, Cloudinary, and Multer for user authentication, image upload, and storage. The website also includes an administration system, where admins can add, delete, and update books in the catalog.
 
 
 
@@ -12,7 +12,10 @@ Reviewerz is a book reviewing website built using the MERN stack, Firebase, Clou
 - User can read reviews written by other users.
 - User can write their own reviews for books they've read.
 - User can edit or delete their own reviews.
-- User can upload a book cover image using Multer and Cloudinary.
+- Admin can add books to the catalog.
+- Admin can delete books from the catalog.
+- Admin can update information for books in the catalog.
+
 
 
 ## Run Locally
@@ -30,7 +33,8 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd reviewerz-clent
+  cd reviwerz-server
 ```
 
 Install dependencies
