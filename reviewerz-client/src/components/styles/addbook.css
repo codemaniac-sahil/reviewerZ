@@ -1,0 +1,45 @@
+.addbook a{
+    text-decoration: none;
+    color: white;
+    background-color: #110A36;
+    padding: 10px 20px ;
+  }
+  .add-book-section{
+    background-color: black;
+    height: 90vh;
+    margin:2px 0 0 0 ;
+  }
+  .add-book-inner-section{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    /* align-items: center; */
+  }
+  .add-book-form{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+  .form-info1{
+    display: flex;
+    gap: 2em;
+  }
+  .submit-button button{
+    background-color: #110A36;
+    border: 0;
+    padding: 20px 60px;
+    font-size: 1.3em;
+    color: white;   
+    cursor: pointer; 
+  }
+  .submit-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .add-book-section a{
+    text-decoration: none;
+    color: white;
+  }

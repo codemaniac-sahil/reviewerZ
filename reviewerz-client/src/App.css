@@ -1,0 +1,223 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #272727;
+  color: white;
+}
+.navbar{
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+}
+.navlinks{
+  display: flex;
+  list-style: none;
+  gap: 2em;
+
+}
+.navlinks a{
+  text-decoration: none;
+  color: #f5b041;
+}
+.homepage{
+  height: 90vh;
+  background-color: black;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5em;
+}
+.hero-class-heading h1{
+  font-size: 4em;
+  
+}
+.hero-class-motto h3{
+  font-size: 2em;
+}
+.hero-signup-link a{
+  background-color: #f5b041;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2em;
+    text-decoration: none;
+    color: beige;
+}
+.logo a{
+  text-decoration: none;
+  color: #f5b041;
+}
+.login-section{
+  display: flex;
+  height: 90vh;
+  background-color: black;
+  margin-top: 2px;
+  justify-content: center;
+  /* align-items: center; */
+}
+.login-box{
+  /* width: 30%;
+  margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  /* background-color: #161616; */
+  gap: 2em;
+  align-items: center;
+  justify-content: center;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+.form-input-field{
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+}
+input{
+  padding: 20px 30px;
+  font-size: 1.2em;
+  width: 100%;
+  background-color: #272727;
+  border: 0;
+  color: white;
+}
+.login-section-heading h1{
+  font-size: 3em;
+
+}
+.links{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+.login-buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+.links a{
+  text-decoration: none;
+  color: #f5b041/*  */;
+  font-weight: bolder;
+}
+.buttons button{
+  background-color: #f5b041;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 2em;
+}
+/* .navlinks button{
+  background-color: black;
+  color: white;
+  border: 0;
+  padding:;
+  font-size: 23px;
+} */
+
+/* .admin-dashboard{
+  background-color: black;
+  height: 90vh;
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 3em;
+
+} */
+.admin-dashboard{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  gap: 2em;
+}
+.admin-dashboard-heading h1{
+  font-size: 3em;
+}
+.admin-dashboard-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.book-info-table{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 2em;
+
+  
+}
+.addbook{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.book-info-table table{
+  border-collapse: collapse;
+  width: 100%;
+  color: white;
+  font-size: 1.2em;
+  /* text-align: left; */
+}
+.book-info-table th{
+  background-color: #110A36;
+  color: white;
+  padding: 10px 20px;
+}
+.book-info-table td{
+  background-color: #272727;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+.book-info-table td a{
+  text-decoration: none;
+  color: white;
+  background: #28a745;
+  border-radius: 5px;
+padding: 6.5px 20px;
+font-size: 1.2rem;
+}
+.book-info-table td a:hover{
+  background: #218838;
+}
+.book-info-table td button{
+background-color: #dc3545;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+font-size: 1.2rem;
+}
+.book-info-table td button:hover{
+  background-color: #c82333;
+}
+.action-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}

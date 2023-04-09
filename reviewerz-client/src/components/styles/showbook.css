@@ -1,0 +1,85 @@
+.showbook{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+}
+.showbook-img{
+    width: 530px;
+    height: 530px;
+    /* object-fit: cover; */
+    
+}
+.showbook-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px;
+    gap: 2em;
+}
+
+
+.showbook-img img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.showbook-info1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    flex-direction: column;
+    gap: 1em;
+}
+.showbook-desc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 2em;
+}
+
+.write-review{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 40px;
+    gap: 2em;
+}
+.form-control{
+   background-color: white;
+   color: black;
+   /* width: 90%; */
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px;
+    gap: 2em;
+align-items: center;
+}
+.btn-class{
+    background-color: #f5b041;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 2em;
+}
+.yourReview{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0px;
+    gap: 2em;
+}
