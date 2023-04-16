@@ -26,7 +26,7 @@ function AddBook() {
       formData.append("availon", book.availOn);
       formData.append("synopsis", book.synopsis);
       formData.append("image", book.image);
-      const res = await fetch("https://reviewerz-server.onrender.com", {
+      const res = await fetch("https://reviewerz-server.onrender.com/", {
         method: "POST",
         body: formData,
       });

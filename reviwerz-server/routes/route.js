@@ -2,7 +2,7 @@ import express from "express";
 import cloudinary from "../utils/cloudinary.js";
 import upload from "../utils/multer.js";
 import Book from "../schema/BookSchema.js";
-// const Book = require("../model/schema");
+
 const router = express.Router();
 router.post("/", upload.single("image"), async (req, res) => {
   try {
@@ -54,7 +54,8 @@ router.delete("/:id", async (req, res) => {
 router.put("/:id", upload.single("image"), async (req, res) => {
   try {
     let book = await Book.findById(req.params.id);
-    await cloudinary.uploader.destroy(book.cloudinary_id);
+    await cloudinary.uploader.de;
+    stroy(book.cloudinary_id);
     console.log(book);
     let result;
     if (req.file) {
@@ -70,6 +71,27 @@ router.put("/:id", upload.single("image"), async (req, res) => {
       cloudinary_id: result ? result.public_id : book.cloudinary_id,
     };
     book = await Book.findByIdAndUpdate(req.params.id, data, { new: true });
+    res.json(book);
+  } catch (error) {
+    console.log(error);
+  }
+});
+router.post("/comment/:id", async (req, res) => {
+  try {
+    console.log(req.params.id);
+    let book = await Book.findById(req.params.id);
+    console.log(book);
+    let comment = {
+      review: req.body.review,
+      name: req.body.name,
+      date: req.body.date,
+    };
+    console.log(comment);
+    book.comments.push(comment);
+    await book.save();
+
+    console.log(comment);
+
     res.json(book);
   } catch (error) {
     console.log(error);

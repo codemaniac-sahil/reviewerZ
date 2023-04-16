@@ -23,11 +23,21 @@ function Signup() {
       setError("");
 
       setLoading(true);
-      await signup(emailref.current.value, pwdref.current.value);
+      await signup(emailref.current.value, pwdref.current.value).then(
+        (userCredential) => {
+          console.log(userCredential);
+          // Signed in
+          var user = userCredential.user;
+          user.updateProfile({
+            displayName: username.current.value,
+          });
+          // ...
+        }
+      );
 
       navigate("/dashboard");
-    } catch {
-      setError("Failed to signup");
+    } catch (error) {
+      setError(error.message);
     }
     setLoading(false);
   }

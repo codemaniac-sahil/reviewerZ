@@ -53,7 +53,7 @@ function Editbook() {
   console.log(book);
   useEffect(() => {
     loadBookDetail(id);
-  }, []);
+  }, [id]);
 
   return (
     <div className="add-book-section">

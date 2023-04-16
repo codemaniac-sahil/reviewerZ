@@ -5,7 +5,7 @@ function AdminDashboard() {
   const navigate = useNavigate();
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch("https://reviewerz-server.onrender.com")
+    fetch("https://reviewerz-server.onrender.com/")
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);

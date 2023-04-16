@@ -1,35 +1,24 @@
 import React, { useEffect, useState } from "react";
-// import { useAuth } from "./context/AuthContext";
-// useAuth
+
 import { NavLink } from "react-router-dom";
-// import { useAuth } from "../../context/AuthContext";
+
 import "../styles/userdashboard.css";
 
 function DashboardTemp() {
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch("https://reviewerz-server.onrender.com")
+    fetch("https://reviewerz-server.onrender.com/")
       .then((res) => res.json())
       .then((data) => {
         setBooks(data);
       });
   }, []);
-  // console.log(books);
-  // const navigate = useNavigate();
-  // const handleLogOut = async () => {
-  //   setError("");
-  //   try {
-  //     await logout();
-  //     navigate("/login");
-  //   } catch {
-  //     setError("Failed to logout");
-  //   }
-  // };
 
   return (
     <>
       <div className="dashboard">
         <div className="dashboard-heading">
+          {/* <h1>{currentUser.displayName}</h1> */}
           <h1>Review Book</h1>
         </div>
         <div className="dashboard-info">

@@ -4,17 +4,25 @@ import "./styles/showbook.css";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
-import { db } from "../firebase";
-import { doc, setDoc, getDoc } from "firebase/firestore";
+
 function ShowBook() {
   const { currentUser } = useAuth();
   const [review, setReview] = useState("");
-  const [reviewList, setReviewList] = useState([]);
+  const [reviews, setReviews] = useState([]);
+
   // const navigate = useNavigate();
   const { id } = useParams();
   console.log(currentUser.uid);
   const [book, setBook] = useState([]);
   console.log(currentUser.displayName);
+  const getDate = () => {
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+  const date = getDate();
   useEffect(() => {
     fetch(`https://reviewerz-server.onrender.com/${id}`)
       .then((res) => res.json())
@@ -25,35 +33,44 @@ function ShowBook() {
   const handleAddReview = async (e) => {
     e.preventDefault();
     try {
-      await setDoc(doc(db, "users", currentUser.uid, "bookId", id), {
-        email: currentUser.email,
-        bookId: id,
+      const addReview = {
         review: review,
-      });
-      getReview();
+        name: currentUser.displayName,
+        date: date,
+      };
+      const res = await fetch(
+        `https://reviewerz-server.onrender.com/comment/${id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addReview),
+        }
+      );
+      const data = await res.json();
+      console.log(data);
+      getReviews();
+      setReview("");
+      console.log(reviews);
     } catch (error) {
       console.log(error);
     }
   };
-
-  const getReview = useCallback(async () => {
+  const getReviews = useCallback(async () => {
     try {
-      const docRef = doc(db, "users", currentUser.uid, "bookId", id);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        // console.log("Document data:", docSnap.data().review);
-        setReviewList(docSnap.data().review);
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-      }
+      const res = await fetch(`https://reviewerz-server.onrender.com/${id}`);
+      const data = await res.json();
+      // console.log(data.comments);
+      setReviews(data.comments);
+      // console.log(reviews);
     } catch (error) {
       console.log(error);
     }
-  }, [currentUser.uid, id]);
+  }, [id]);
   useEffect(() => {
-    getReview();
-  }, [getReview]);
+    getReviews();
+  }, [getReviews]);
 
   return (
     <>
@@ -121,9 +138,24 @@ function ShowBook() {
 </button> */}
           </div>
           <div className="yourReview">
-            <h1>Your Review</h1>
-
-            <p>{reviewList}</p>
+            <h1>See {/*  */}Review</h1>
+            {reviews.map((review) => (
+              <div className="review">
+                <div className="review-info">
+                  <div className="review-info1">
+                    <div className="review-desc">
+                      <h1>{review.name}</h1>
+                      <p>{review.date}</p>
+                    </div>
+                  </div>
+                  <div className="review-info2">
+                    <div className="review-review">
+                      <p>{review.review}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </form>
       </div>
